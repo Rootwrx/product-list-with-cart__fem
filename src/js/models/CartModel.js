@@ -69,6 +69,7 @@ class CartModel extends BaseModel {
       total: 0,
     };
 
+    this.save();
     this.notify();
   }
   
