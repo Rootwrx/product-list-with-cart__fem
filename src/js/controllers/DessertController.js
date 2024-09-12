@@ -14,7 +14,10 @@ class DessertController {
     // getting data from the model (http request)
     await this.model.fetchDesserts();
     // rendering data to view
-    this.view.render(this.cartModel.cart.items, this.model.getDesserts());
+    this.view.render({
+      desserts: this.model.desserts,
+      cartItems: this.cartModel.cart.items,
+    });
     // removing loader after almost everything loaded
     setTimeout(() => this.view.removeLoader(), 500);
 
@@ -34,7 +37,10 @@ class DessertController {
   }
 
   update() {
-    this.view.update(this.cartModel.cart.items);
+    this.view.update({
+      desserts: this.model.desserts,
+      cartItems: this.cartModel.cart.items,
+    });
   }
 }
 

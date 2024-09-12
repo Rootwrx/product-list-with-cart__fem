@@ -1,32 +1,27 @@
-import DOMUpdater from "../lib/domUpdater";
+import BaseView from "../core/BaseView";
 import { CA } from "../utils/config";
 import { formatPrice } from "../utils/helpers";
 
-class DessertView {
-  _parentElement = document.querySelector(".desserts");
+class DessertView extends BaseView {
+  _parentElement = document.querySelector(".desserts-items");
 
-  render(cartItems, data) {
-    this._data = data;
-    this._parentElement.innerHTML = this._generateMarkUp(cartItems);
-  }
 
-  update(cartItems) {
-    const newMarkup = this._generateMarkUp(cartItems);
-    DOMUpdater.update(this._parentElement, newMarkup, {
+  update(data) {
+    super.update(data, {
       ignore: [".dessert-image"],
     });
   }
 
-  _generateMarkUp(cartItems) {
+  _generateMarkup() {
     return `
-        ${this._data
-          .map((item) => this._generateItemMarkup(item, cartItems))
+        ${this._data.desserts
+          .map((item) => this._generateItemMarkup(item))
           .join("")}
     `;
   }
 
-  _generateItemMarkup(item, cartItems) {
-    const cartItem = cartItems.find((el) => el.id == item?.id);
+  _generateItemMarkup(item) {
+    const cartItem = this._data.cartItems.find((el) => el.id == item?.id);
     const quantity = cartItem?.quantity || 0;
     const inCart = quantity !== 0;
 

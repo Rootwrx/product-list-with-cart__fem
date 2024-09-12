@@ -1,46 +1,41 @@
 .cart {
   background-color: var(--clr-white);
-  min-height: 299px;
 
   border-radius: 8px;
 
   padding: 32px 27px 28px;
 
   position: fixed;
-  top: 00;
-
   max-width: 100%;
+  min-height: 299px;
   width: 360px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
-  transition: 0.5s ease-in-out;
   z-index: var(--z-index-cart);
 
-  display: flex;
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
   max-height: 80%;
   overflow: auto;
+  display: none;
 
-  @include fade(out);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  &.show {
+    display: flex;
+    transition: 0.1s;
+  }
   @include media(md) {
+    display: flex;
     z-index: initial;
     width: rv(300px, 384px);
-    right: initial;
     position: sticky;
-    top: 50px;
     transform: none;
-    @include fade(in);
+    top: 50px;
   }
-  @include media(md, max) {
-    &.show {
-      @include fade(in);
-    }
-  }
+
   &-header {
     font-size: rv(23px, 25px);
     color: var(--clr-red);

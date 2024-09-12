@@ -25,13 +25,14 @@ body {
 }
 
 h1 {
-  grid-column: 2;
   font-weight: var(--fw-black);
   line-height: 1;
+  font-size: rv(25px, 34px);
+  margin-bottom: rv(20px, 40px);
 }
 
 h2 {
-  font-size: clamp(0.875rem, 0.094vw + 0.853rem, 0.938rem);
+  font-size: rv(14px, 15px);
   color: var(--clr-gray-light);
 }
 

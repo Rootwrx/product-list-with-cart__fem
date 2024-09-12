@@ -64,15 +64,6 @@ class CartView extends BaseView {
     `;
   }
 
-  onCartIcon() {
-    this._cartCount.addEventListener("click", () => {
-      this._overlay.classList.add("show");
-      this._parentElement.classList.add("show");
-
-      this._parentElement.scrollTo({ top: this._parentElement.scrollHeight });
-    });
-  }
-
   _generateEmptyCart() {
     return `
       <div class="cart-empty">
@@ -132,6 +123,14 @@ class CartView extends BaseView {
       this._orderModalContent,
       `${cartItems.outerHTML}${cartTotal.outerHTML}`
     );
+  }
+  onCartIcon() {
+    this._cartCount.addEventListener("click", () => {
+      this._overlay.classList.toggle("show");
+      this._parentElement.classList.toggle("show");
+
+      this._parentElement.scrollTo({ top: this._parentElement.scrollHeight });
+    });
   }
 
   onStartNewOrder(handler) {
