@@ -1,0 +1,126 @@
+.desserts {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+
+  margin-top: 40px;
+
+  .dessert {
+    position: relative;
+    &::before {
+      content: "";
+      @include box(100%);
+      background-color: var(--clr-white);
+      position: absolute;
+      border-radius: 8px;
+      z-index: 1;
+      inset: 0;
+    }
+
+    .loader {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    img.lazy {
+      filter: blur(10px);
+      opacity: 0;
+      transition: filter 0.6s ease-in, border 0.3s;
+    }
+
+    &:has(.loaded) {
+      &::before {
+        @include fade(out);
+      }
+
+      .loader {
+        @include fade(out);
+      }
+
+      img.loaded {
+        filter: blur(0);
+        opacity: 1;
+      }
+    }
+
+    &-image {
+      overflow: hidden;
+      height: rv(219px, 240px);
+
+      img {
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 3px solid transparent;
+      }
+    }
+
+    &.in-cart {
+      .addtocart {
+        display: none;
+      }
+
+      .dessert-quantity-controls {
+        display: flex;
+      }
+
+      .dessert-image img {
+        border-color: var(--clr-red);
+      }
+    }
+
+    &-actions {
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin-bottom: 30px;
+    }
+
+    &-quantity-controls,
+    .addtocart {
+      height: 44px;
+      width: 159px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      border-radius: var(--border-radius-pill);
+
+      position: absolute;
+    }
+
+    .addtocart {
+      border: 1px solid var(--clr-rose-500);
+      transition: 0.5s linear;
+      background-color: var(--clr-white);
+    }
+
+    &-quantity-controls {
+      background-color: var(--clr-red);
+      justify-content: space-evenly;
+      color: var(--clr-white);
+      display: none;
+
+      button {
+        width: 20px;
+        height: 20px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--clr-white);
+        border-radius: 50%;
+      }
+    }
+
+    &-details {
+      display: grid;
+      gap: 9px;
+    }
+  }
+}

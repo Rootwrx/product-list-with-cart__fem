@@ -1,0 +1,32 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rootwrx/REPO-NAME.git"
+  },
+  "keywords": [
+    "Js modules",
+    "Asynchrounos Js",
+    "mvc structure"
+  ],
+  "author": "Smail Ettanjaoui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rootwrx/REPO-NAME/issues"
+  },
+  "homepage": "https://github.com/Rootwrx/REPO-NAME#readme",
+  "devDependencies": {
+    "vite": "^5.4.1"
+  },
+  "description": "",
+  "dependencies": {
+    "sass-embedded": "^1.78.0"
+  }
+}

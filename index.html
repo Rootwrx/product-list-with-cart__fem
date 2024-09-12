@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icons/favicon.png" type="image/png" />
+    <title>Dessert Shop</title>
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="/main.js" defer></script>
+  </head>
+  <body>
+    <!-- <main>
+      <section id="product-list" class="product-grid">
+      </section>
+      <aside id="cart">
+        <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+        <div id="cart-items">
+        </div>
+        <div id="cart-total">
+          <p>Order Total: $<span id="total-price">0.00</span></p>
+        </div>
+        <button id="confirm-order" class="btn btn-primary">
+          Confirm Order
+        </button>
+      </aside> 
+    </main> -->
+    <div class="order-modal">
+      <div class="order-modal-header">
+        <img src="icons/icon-order-confirmed.svg" alt="" />
+        <span>Order Confirmed</span>
+        <p>We hope you enjoy your food!</p>
+      </div>
+
+      <div class="order-modal-content">
+        <!-- <div class="cart-items cloned">
+          <div class="cart-item" data-id="2560-587-400f-859-2f5b">
+            <img
+              class="cart-item-thumbnail"
+              src="images/image-baklava-thumbnail.jpg"
+              alt=""
+            />
+            <div class="cart-item-details">
+              <p>Macaron Mix of Five</p>
+              <span>
+                <span class="cart-item-quantity">1x</span>
+                <span class="cart-item-price">@8.00</span>
+                <span class="cart-item-total">$8.00</span>
+              </span>
+            </div>
+            <button class="remove-item">
+              <img src="icons/icon-remove-item.svg" alt="" />
+            </button>
+            <span class="cart-item-total confirm">$8.00</span>
+          </div>
+
+          <div class="cart-item" data-id="ba53-dd4-448a-b4d-e8d4">
+            <img
+              class="cart-item-thumbnail"
+              src="images/image-baklava-thumbnail.jpg"
+              alt=""
+            />
+            <div class="cart-item-details">
+              <p>Classic Tiramisu</p>
+              <span>
+                <span class="cart-item-quantity">1x</span>
+                <span class="cart-item-price">@5.50</span>
+                <span class="cart-item-total">$5.50</span>
+              </span>
+            </div>
+            <button class="remove-item">
+              <img src="icons/icon-remove-item.svg" alt="" />
+            </button>
+            <span class="cart-item-total confirm">$5.50</span>
+          </div>
+        </div>
+        <div class="cart-total">
+          <p>
+            <span>Order Total: </span>
+            <span class="cart-total-price">$50.50</span>
+          </p>
+        </div> -->
+      </div>
+
+      <button class="btn btn-primary start-new-order">Start New Order</button>
+    </div>
+
+    <div class="page-loader"><span class="loader"></span></div>
+    <!-- overlay -->
+    <div class="overlay"></div>
+    <!-- Start  Header -->
+    <header class="header container">
+      <h1>desserts</h1>
+      <button data-count="0">
+        <img src="icons/icon-shopping-cart.png" alt="" />
+      </button>
+    </header>
+    <!-- End  Header -->
+    <!-- Start Main -->
+    <main>
+      <section class="container hero">
+        <!-- <article class="desserts"></article> -->
+         <aside class="cart"></aside>
+      </section>
+    </main>
+
+    <!-- End Main -->
+
+    <!-- Start footer -->
+    <footer></footer>
+    <!-- End footer -->
+  </body>
+</html>

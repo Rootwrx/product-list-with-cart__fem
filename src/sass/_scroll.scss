@@ -1,0 +1,23 @@
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width); /* width of the entire scrollbar */
+}
+
+/* Track = where the thumb (handle) moves x or v  */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg); /* color of the track */
+  border-radius: var(--scrollbar-track-br); /* round the corners of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg); /* color of the handle */
+  border-radius: var(--scrollbar-thumb-br); /* round the corners of the handle */
+  border: 2px solid #f1f1f1; /* adds space around the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg); /* color when hovered */
+}

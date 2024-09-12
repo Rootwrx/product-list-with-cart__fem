@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+img {
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  background-size: cover;
+  vertical-align: center;
+  user-select: none;
+  max-height: 100%;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+button,
+input {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border-color: transparent;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+button {
+  cursor: pointer;
+}
