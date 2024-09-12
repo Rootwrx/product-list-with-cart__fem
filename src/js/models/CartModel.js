@@ -28,7 +28,6 @@ class CartModel extends BaseModel {
     this.updateTotal();
     this.save();
 
-    // notify the cartControler to update the view
     this.notify();
   }
 
