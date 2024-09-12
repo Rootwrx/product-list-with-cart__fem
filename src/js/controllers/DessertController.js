@@ -18,7 +18,7 @@ class DessertController {
     // removing loader after almost everything loaded
     setTimeout(() => this.view.removeLoader(), 500);
 
-    this.view.addHandler(this.controlDessertActions.bind(this));
+    this.view.onQuantity(this.controlDessertActions.bind(this));
   }
 
   controlDessertActions({ id, quantity, action }) {

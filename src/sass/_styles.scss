@@ -65,6 +65,9 @@ h4 {
   button {
     max-width: 40px;
     position: relative;
+    @include media(md) {
+      display: none;
+    }
 
     &:before {
       content: attr(data-count);

@@ -10,12 +10,9 @@ class CartController {
 
   initCart() {
     this.view.render(this.model.cart);
-    this.view.AddHandler(this.removeItem.bind(this));
     // update the count
     this.view.updateCount(this.model.cart.count);
-    this.view.AddHandlerConfirm();
-    this.view.AddHandlerStartNewOrder(this.startNewOrder.bind(this));
-    this.view.addHanlderCartIcon() ;
+    this._setupEventHandlers();
   }
 
   update() {
@@ -23,12 +20,18 @@ class CartController {
     this.view.updateCount(this.model.cart.count);
   }
 
+  _setupEventHandlers() {
+    this.view.onRemoveItem(this.removeItem.bind(this));
+    this.view.onConfirmOrder();
+    this.view.onStartNewOrder(this.startNewOrder.bind(this));
+    this.view.onCartIcon();
+  }
+
   startNewOrder() {
     this.model.reset();
   }
 
   removeItem(id) {
-    // remove some elment => change data => run this.update
     this.model.remove(id);
   }
 }
